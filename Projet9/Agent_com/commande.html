@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS personnaliser -->
+  <link rel="stylesheet" type="text/css" href="dashboard.css">
+  <title>Tableau de bord - Ajouter commande</title>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <div class="navbar-nav">
+      <div class="nav-item px-3 text-nowrap dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">User Name</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Profil</a></li>
+          <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+        </ul>      
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="dashboard.html">
+                <span data-feather="home"></span>
+                Tableau de bord
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="commande.html">
+                <span data-feather="file"></span>
+                Ajouter une commande
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="liste_commande.html">
+                <span data-feather="shopping-cart"></span>
+                Liste des commandes
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="ajouter_echeance.html">
+                <span data-feather="file"></span>
+                Ajouter une échéance
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="liste_echeance.html">
+                <span data-feather="shopping-cart"></span>
+                Liste des échéances
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">User Name</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="profil.html">Profil</a></li>
+                <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Partager</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Exporter</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <span data-feather="calendar"></span>
+              Cette semaine
+            </button>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+            <h2 class="fw-bolder p-3">BON DE COMMANDE - VENTE DE VEHICULE</h2>
+          </div>
+
+
+          <div class="g-5">
+          <!--  <div class="col-md-6 col-lg-5 order-md-last">
+              <h4 class="mb-3">
+                <span class="text-primary">MODE DE PAIEMENT</span>
+              </h4>
+              <form class="card p-2">
+
+                <h5 class="mx-auto bg-success text-white fw-bolder p-4">PAIEMENT AU COMPTANT</h5>
+                <p> <span class="fw-bolder fs-5"> L'acheteur s'engage : </span> <br>
+
+                  <label for="firstName" class="form-label mt-2">- D'une part à verser à la signature du présent bon de commande, au vendeur la somme de : </label>
+                  <input type="text" class="form-control" placeholder="xxx xxx xxx xxx FCFA">
+
+                  <label for="firstName" class="form-label mt-2">- D'une part à verser à la signature du présent bon de commande, au vendeur la somme de : </label>
+                  <input type="text" class="form-control" placeholder="xxx xxx xxx xxx FCFA">
+
+                  <br>
+
+                  <label for="firstName" class="form-label">- D'autre part à verser à la mise à disposition du véhicule, <span class="fw-bolder text-danger"> le montant du solde total </span>, soit : </label>
+                  <input type="text" class="form-control" placeholder="xxx xxx xxx xxx FCFA">
+
+                </p>
+              </form>
+
+              <form class="card p-2 mt-3">
+
+                <h5 class="mx-auto bg-success text-white fw-bolder p-4">PAIEMENT A CREDIT</h5>
+                <p> <span class="fw-bolder fs-5"> L'acheteur s'engage : </span> <br>
+
+                  <label for="firstName" class="form-label mt-2">- D'une part à verser à la signature du présent bon de commande, au vendeur la somme de : </label>
+                  <input type="text" class="form-control" placeholder="xxx xxx xxx xxx FCFA">
+
+                  <br>
+
+                  <label for="firstName" class="form-label">- D'autre part à verser tous les mois après mise à disposition du véhicule, <span class="fw-bolder text-danger"> le montant de </span> : </label>
+                  <input type="text" class="form-control" placeholder="xxx xxx xxx xxx FCFA">
+
+                  <br>
+
+                  <label for="firstName" class="form-label">- Pour atteindre le montant du solde total, les versements se feront sur un nombre total de <span class="fw-bolder text-danger"> MOIS </span> égal à: </label>
+                  <input type="text" class="form-control" placeholder="Nombre de mois">
+
+                </p>
+              </form>
+            </div>-->
+            <form class="needs-validation" novalidate>
+
+              <div class="row g-3 mb-3">
+                <div class="col-sm-4">
+                  <label for="firstName" class="form-label">Nom agent commerciale</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="Nom agent commercial" value="" required/>
+                  <div class="invalid-feedback">
+                    Veuillez entré un nom valide.
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <label for="lastName" class="form-label">Prénom agent commerciale</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="Nom agent commercial" value="" required/>
+                  <div class="invalid-feedback">
+                    Veuillez entré un prénom valide.
+                  </div>
+                </div>
+
+                <div class="col-sm-4">
+                  <label for="date_commande" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="date_commande" required/>
+                  <div class="invalid-feedback">
+                    Veuillez entré une date valide.
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-4">
+
+              <div class="row g-3 mb-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">Nom du client</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="" value="" required/>
+                  <div class="invalid-feedback">
+                    Veuillez entré un nom valide.
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Prénom du client</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required/>
+                  <div class="invalid-feedback">
+                    Veuillez entré un prénom valide.
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-sm-6">
+                  <label for="email" class="form-label">Email du client</label>
+                  <input type="email" class="form-control" id="email" placeholder="you@example.com"/>
+                  <div class="invalid-feedback">
+                    Veuillez saisir une adresse mail valide.
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="address2" class="form-label">Téléphone du client</label>
+                  <input type="text" class="form-control" id="address2" placeholder="+229 67 44 13 82"/>
+                  <div class="invalid-feedback">
+                    Veuillez saisir un numéro valide.
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-4">
+
+              <div class="row g-3 mb-3">
+                <div class="col-sm-6">
+                  <label for="marque" class="form-label">Marque de véhicule</label>
+                  <input type="text" class="form-control" list="marques" id="marque" placeholder="Marque de véhicule" required/>
+
+                  <datalist id="marques">
+                    <option value="TOYOTA"/>
+                    <option value="HONDA"/>
+                    <option value="BMW"/>
+                    <option value="NISSAN"/>
+                    <option value="CITROEN"/>
+                    <option value="VOLSWAGEN"/>
+                    <option value="LAND ROVER"/>
+                  </datalist> 
+
+                  <div class="invalid-feedback">
+                    Veuillez saisir une marque valide.
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="Type_vehicule" class="form-label">Type de véhicule</label>
+                  <input type="text" class="form-control" list="Type_vehicules" id="Type_vehicule" placeholder="Type de véhicule" required/>
+
+                  <datalist id="Type_vehicules">
+                    <option value="RAV 4"/>
+                    <option value="MERCEDES"/>
+                    <option value="CAMRY"/>
+                    <option value="RANG ROVER"/>
+                    <option value="JEEP"/>
+                  </datalist> 
+
+                  <div class="invalid-feedback">
+                    Veuillez saisir un type de véhicule valide.
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-sm-6">
+                  <label for="marque" class="form-label">Couleur du véhicule</label>
+                  <input type="text" class="form-control" list="marques" id="marque" placeholder="Couleur du véhicule" required/>
+
+                  <datalist id="marques">
+                    <option value="Rouge"/>
+                    <option value="Blanc"/>
+                    <option value="Bleu"/>
+                    <option value="Noir"/>
+                    <option value="Gris"/>
+                  </datalist> 
+
+                  <div class="invalid-feedback">
+                    Veuillez saisir une couleur valide.
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="Type_vehicule" class="form-label">Numéro de chassis</label>
+                  <input type="text" class="form-control" id="Type_vehicule" placeholder="Numéro de chassis" required/>
+
+                  <div class="invalid-feedback">
+                    Veuillez saisir un numéro valide.
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-sm-3">
+                  <label for="quantite" class="form-label">Quantité</label>
+                  <input type="Number" class="form-control" id="quantite" placeholder="Quantité" required/>
+                  <div class="invalid-feedback">
+                    Veuillez saisir un nombre valide.
+                  </div>
+                </div>
+
+                <div class="col-sm-9">
+                  <div class="row g-3 mb-3">
+                    <div class="col-sm-4">
+                     <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked/>
+                      <label class="form-check-label">Option 1</label>
+                    </div>  
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked/>
+                      <label class="form-check-label">Option 2</label>
+                    </div> 
+
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked/>
+                      <label class="form-check-label">Option 3</label>
+                    </div>                  
+                  </div>
+
+                  <div class="col-sm-4">
+                   <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked/>
+                    <label class="form-check-label">Option 4</label>
+                  </div>  
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked/>
+                    <label class="form-check-label">Option 5</label>
+                  </div> 
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked/>
+                    <label class="form-check-label">Option 6</label>
+                  </div>                  
+                </div>
+
+                <div class="col-sm-4">
+                 <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked/>
+                  <label class="form-check-label">Option 7</label>
+                </div>  
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked/>
+                  <label class="form-check-label">Option 8</label>
+                </div> 
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked/>
+                  <label class="form-check-label">Option 9</label>
+                </div>                  
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6">
+              <label for="marque" class="form-label fw-bolder text-danger">PRIX DE BASE CONVENU</label>
+              <input type="text" class="form-control" id="marque" placeholder="xxx xxx xxx xxx FCFA" required/>
+
+              <div class="invalid-feedback">
+                Veuillez saisir un prix valide.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="Type_vehicule" class="form-label fw-bolder text-danger">PRIX TOTAL DE VENTE CONVENU</label>
+              <input type="text" class="form-control" id="Type_vehicule" placeholder="xxx xxx xxx xxx FCFA" required/>
+
+              <div class="invalid-feedback">
+                Veuillez saisir un prix valide.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="btn btn-primary btn-lg mb-4" href="#bon_de_commande">Ajouter un véhicule</a>
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Valider la commande</button>
+      </form>
+    </div>
+  </div>
+
+
+</main>
+</div>
+</div>
+
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+</body>
+</html>
